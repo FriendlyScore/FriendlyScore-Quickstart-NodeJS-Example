@@ -1,0 +1,18 @@
+{
+  "opts": {
+    "template": "node_modules/docdash",
+    "encoding": "utf8",
+    "destination": "./doc/",
+    "recurse": true
+  },
+  "source": {
+    "include": [
+      "services/authService.js",
+      "services/oneTimeUrlService.js",
+      "services/customerService.js",
+      "services/transactionService.js",
+      "services/forecastService.js",
+      "services/insightsService.js"
+    ]
+  }
+}

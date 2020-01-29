@@ -1,0 +1,46 @@
+<section class="request {{ class }}">
+  <header class="request-header row">
+    <div class="request-header-method col-sm-2">
+      <div class="badge badge-secondary text-uppercase w-100">{{ method }}</div>
+    </div>
+    <div class="request-header-description col">
+      <h4 class="request-header-description__title">{{ title }}</h4>
+      <p class="request-header-description__text">{{ description }}</p>
+    </div>
+    <div class="request-header-call col-sm-3">
+      <button id="{{ name }}-btn" class="btn btn-primary d-block w-100">Send request</button>
+    </div>
+  </header>
+  <div id="{{ name }}-wrapper" class="request-code-wrapper d-none">
+    <div class="request-code-api-url">{{ apiUrl }}</div>
+    <div class="request-code">
+      <pre id="{{ name }}-hljs"><code id="{{ name }}-output" class="json hljs"></code></pre>
+    </div>
+  </div>
+  <section id="{{ name }}-description-boxes" class="request-description-boxes d-none flex-wrap">
+    {% for requestDescriptionBox in requestDescriptionBoxes %}
+      {% include '../components/request-description-box.twig' with {
+        title: requestDescriptionBox.title,
+        description: requestDescriptionBox.description
+      } %}
+    {% endfor %}
+  </section>
+</section>
+
+{% block javascripts %}
+<script>
+  document.getElementById('{{ name }}-btn').addEventListener('click', function() {
+    fetch('{{ requestUri }}').then((res) => {
+      return res.json();
+    }).then((jsonObject) => {
+      var accessTokenElement = document.getElementById('access-token');
+      document.getElementById('{{ name }}-output').innerText = JSON.stringify(jsonObject.data, null, 2);
+      if (accessTokenElement) accessTokenElement.innerText = jsonObject.accessToken;
+      hljs.highlightBlock(document.getElementById('{{ name }}-hljs'));
+      document.getElementById('{{ name }}-wrapper').classList.remove('d-none');
+      document.getElementById('{{ name }}-description-boxes').classList.remove('d-none');
+      document.getElementById('{{ name }}-description-boxes').classList.add('d-flex');
+    });
+  });
+</script>
+{% endblock %}

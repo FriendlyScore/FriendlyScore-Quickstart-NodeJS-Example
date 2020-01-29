@@ -1,0 +1,115 @@
+<section class="content container">
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      {% include './quickstart-header.twig' %}
+
+      {% if (showCredentials) %}
+      {% include './info-box-section.twig' with {
+        class: 'info-box-section--first',
+        item1: {
+          title: 'CLINET ID',
+          description: clientId
+        },
+        item2: {
+          title: 'CLIENT SECRET',
+          description: clientSecret
+        }
+      } %}
+      {% include './info-box-section.twig' with {
+        item1: {
+          title: 'ACCESS TOKEN',
+          description: accessToken,
+          id: 'access-token'
+        },
+        item2: {
+          title: 'SERVER URL',
+          description: baseUrl
+        }
+      } %}
+      {% endif %}
+
+      {% include './action-text.twig' with { class: 'my-4 my-md-5', text: 'Click buttons below to Send request to the main API endpoints' } %}
+    </div>
+  </div>
+  <div class="playground-box row">
+    <div class="col-md-10 offset-md-1">
+      <div class="playground-box-content">
+          {% include './request.twig' with {
+            apiUrl: '/public/v1/customers/{customerId}/transactions',
+            class: 'request--first',
+            name: 'bank_transactions',
+            requestUri: "/open-banking-demo/transactions",
+            method: "GET",
+            title: "Bank Transactions",
+            description: "Access bank transaction data and classification for all major European banks through a single API.",
+            requestDescriptionBoxes: [
+              {
+                title: 'Name',
+                description: 'The name or names of the account owner(s)',
+              },
+              {
+                title: 'Amount',
+                description: 'Transaction value in designated currency',
+              },
+              {
+                title: 'Category',
+                description: 'Classification of transactions into recognisable categories',
+              },
+              {
+                title: 'Date',
+                description: 'Date and time at which the transaction was made',
+              },
+            ],
+          } %}
+          {% include './request.twig' with {
+            apiUrl: '/public/v1/customers/${customerId}/insights/current',
+            name: 'insights',
+            requestUri: "/open-banking-demo/insights",
+            method: "GET",
+            title: "Insights",
+            description: "Access to a comprehensive library of analytical metrics which summarise, describe and extract insights from Open Banking datasets.",
+            requestDescriptionBoxes: [
+              {
+                title: 'Income',
+                description: 'Analysis and classification of income streams',
+              },
+              {
+                title: 'Expenditure',
+                description: 'Expenditure analysis and classification',
+              },
+              {
+                title: 'Financial Patterns',
+                description: 'Trends, breakdowns and forecasting of transactional data',
+              },
+              {
+                title: 'Financial Markers',
+                description: 'Key drivers of credit risk and affordability',
+              },
+              {
+                title: 'Employment',
+                description: 'Basic employment data inferred from Open Banking',
+              },
+            ],
+          } %}
+          {% include './request.twig' with {
+            apiUrl: '/public/v1/customers/${customerId}/forecasts/current',
+            name: 'forecasts',
+            requestUri: "/open-banking-demo/forecasts",
+            method: "GET",
+            title: "Forecasts",
+            description: "Full credit scoring solution and comprehensive customer segmentation for Open Banking users.",
+            requestDescriptionBoxes: [
+              {
+                title: 'Credit score',
+                description: 'Modern credit score using Open Banking data to profile Financial Behaviour',
+              },
+              {
+                title: 'Affordability',
+                description: 'Modern liquidity score using Open Banking data to profile affordability',
+              },
+            ],
+          } %}
+      </div>
+    </div>
+  </div>
+</section>

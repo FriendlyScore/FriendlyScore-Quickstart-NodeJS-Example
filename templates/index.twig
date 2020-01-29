@@ -1,0 +1,25 @@
+{% extends 'layout.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block body %}
+    {% if webComponentOneTimeUrl is defined %}
+    <div id="fs-component-wrapper" class="container">
+        <div id="fs-component"></div>
+        <script src="{{ webComponentOneTimeUrl }}"></script>
+    </div>
+
+    <script src="/open-banking-demo/js/highlight.js" async></script>
+    <div id="playground" class="d-none">{% include 'components/playground.twig' with { clientId, clientSecret, baseUrl, accessToken } %}</div>
+
+    <script>
+        document.addEventListener('FsOpenBankingBankConnected', function () {
+            document.getElementById('fs-component-wrapper').classList.add('d-none');
+            document.getElementById('playground').classList.remove('d-none');
+        });
+    </script>
+    {% else %}
+    <h1>{{ title }}</h1>
+    <p>{{ error }}</p>}
+    {% endif %}
+{% endblock body %}

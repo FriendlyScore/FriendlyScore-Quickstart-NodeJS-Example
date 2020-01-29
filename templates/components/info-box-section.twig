@@ -1,0 +1,14 @@
+<section class="info-box-section row {{ class }}">
+  <div class="col-sm-6">
+    <article class="info-box-item info-box-item--first">
+      <h6 class="info-box-item__title text-uppercase">{{ item1.title }}</h6>
+      <p class="info-box-item__description overflow-auto" {% if (item1.id) %}id="{{ item1.id }}"{% endif %}>{{ item1.description }}</p>
+    </article>
+  </div>
+  <div class="col-sm-6">
+    <article class="info-box-item">
+      <h6 class="info-box-item__title text-uppercase">{{ item2.title }}</h6>
+      <p class="info-box-item__description overflow-auto" {% if (item1.id) %}id="{{ item1.id }}"{% endif %}>{{ item2.description }}</p>
+    </article>
+  </div>
+</section>

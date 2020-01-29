@@ -1,0 +1,281 @@
+/*
+ * FONTS
+ */
+/* Source Code Pro regular */
+@font-face { font-family: "Source Code Pro"; src: url('../fonts/SourceSansPro-Regular.ttf'); font-weight: 400; font-style: normal; }
+/* Source Code Pro italic */
+@font-face { font-family: "Source Code Pro"; src: url('../fonts/SourceSansPro-Italic.ttf'); font-weight: 400; font-style: italic; }
+/* Source Code Pro bold */
+@font-face { font-family: "Source Code Pro"; src: url('../fonts/SourceSansPro-Bold.ttf'); font-weight: 700; font-style: normal; }
+/* Source Code Pro bold italic */
+@font-face { font-family: "Source Code Pro"; src: url('../fonts/SourceSansPro-BoldItalic.ttf'); font-weight: 700; font-style: italic; }
+/* Source Code Pro semi bold */
+@font-face { font-family: "Source Code Pro"; src: url('../fonts/SourceSansPro-SemiBold.ttf'); font-weight: 700; font-style: normal; }
+/* Source Code Pro semi bold italic */
+@font-face { font-family: "Source Code Pro"; src: url('../fonts/SourceSansPro-SemiBoldItalic.ttf'); font-weight: 700; font-style: italic; }
+/* Source Code Pro black */
+@font-face { font-family: "Source Code Pro"; src: url('../fonts/SourceSansPro-Black.ttf'); font-weight: 900; font-style: normal; }
+/* Source Code Pro black italic */
+@font-face { font-family: "Source Code Pro"; src: url('../fonts/SourceSansPro-BlackItalic.ttf'); font-weight: 900; font-style: italic; }
+
+/*
+ * BODY
+ */
+body {
+  font-family: "Source Code Pro", sans-serif;
+  color: #545454;
+}
+
+/*
+ * HEADINGS
+ */
+h1, h2, h3, h4, h5, h6 {
+  color: #2b2b2b;
+}
+
+h1 {
+  font-weight: 900;
+}
+
+h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+
+/*
+ * BOOTSTRAP
+ * BTN
+ */
+.btn-primary {
+  background-color: #7A2EAD;
+}
+
+/*
+ * BOOTSTRAP
+ * NAV-TABS
+ */
+.nav-tabs {
+  border-bottom: 0;
+}
+.nav-tabs .nav-link {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border: 0;
+  border-bottom: 5px solid transparent;
+  color: #2b2b2b;
+  font-weight: 700;
+  padding: .7rem;
+}
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+  color: #7A2EAD;
+  background-color: transparent;
+  border-color: #7A2EAD;
+}
+
+/*
+ * HEADER
+ */
+.header {
+  border-top: 3px solid #7A2DAD;
+  border-bottom: 1px solid #D8D8D8;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.header-logo {
+
+}
+.header-logo__img:after {
+  content: '';
+  border-right: 1px solid #D8D8D8;
+  margin-left: 10px;
+}
+.header-logo__for-developers {
+  color: #8E8E8E;
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+/*
+ * CONTENT
+ */
+.content {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+/*
+ * QUICKSTART-HEADER
+ */
+.quickstart-header {
+  margin-bottom: 30px;
+}
+.quickstart-header:after {
+  content: '';
+  border-bottom: 5px solid #FE0071;
+  display: block;
+  width: 30px;
+}
+.quickstart-header__title {}
+.quickstart-header__subtitle {
+  color: #545454;
+  font-weight: 400;
+}
+
+/*
+ * INFO BOX
+ */
+.info-box-section {}
+.info-box-item {
+  border-bottom: 1px solid #D4D4D4;
+  padding-top: 0.8rem;
+}
+.info-box-item__title {
+  color: #AD6EEB;
+  font-size: 0.8rem;
+  margin-bottom: 0.3rem;
+}
+.info-box-item__description {
+  font-size: 1rem;
+  color: #545454;
+  margin-bottom: 0.8rem;
+}
+.info-box-item__description.text-muted {
+  color: #cecece !important;
+}
+.info-box-section--first .info-box-item--first {
+  border-top: 1px solid #D4D4D4;
+}
+
+/*
+ * ACTION-TEXT
+ */
+.action-text {
+  font-size: 1.1rem;
+}
+
+/*
+ * PLAYGROUND-BOX
+ */
+.playground-box {
+  background: #FBF9FF;
+  padding-top: 20px;
+}
+.playground-box-nav {
+  border-bottom: 1px solid #D4D4D4;
+  font-size: 1.2rem;
+}
+.playground-box-nav__subtitle {
+  color: #B1B1B1;
+}
+.playground-box-tabs {}
+
+/*
+ * REQUEST
+ */
+.request {
+  margin-bottom: 45px;
+  padding-top: 45px;
+  border-top: 1px solid #7A2EAD;
+}
+.request-header {}
+.request-header-method {}
+.request-header-method .badge {
+  padding: .375rem .75rem;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+.request-header-method .badge-secondary {
+  background-color: #D7D3DF;
+}
+.request-header-description {}
+.request-header-call {}
+.request-header-call .btn {
+  font-size: 1.1rem;
+}
+.request-code-wrapper {
+  border-radius: 5px;
+  -webkit-box-shadow: 0 2px 15px 0 rgba(0,0,0,0.33);
+  -moz-box-shadow: 0 2px 15px 0 rgba(0,0,0,0.33);
+  box-shadow: 0 2px 15px 0 rgba(0,0,0,0.33);
+}
+.request-code {
+  max-height: 400px;
+  overflow: auto;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.request-code pre {
+  margin: 0;
+  background: #23241f;
+}
+.request-code pre code {
+  position: relative;
+}
+.request-code pre code:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.request-code-api-url {
+  background: #23241f;
+  color: #b9b1b1;
+  border-bottom: 1px solid #545454;
+  padding: 15px;
+  font-family: monospace;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+.request-description-boxes {
+  margin-top: 25px;
+}
+.request--first {
+  border-top: 0;
+}
+
+/*
+ * SECTION DESCRIPTION BOXES
+ */
+.section-description-box {
+  border-left: 1px solid #FE0071;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 14px;
+  width: 100%;
+}
+.section-description-box__title {
+  margin-top: 5px;
+}
+.section-description-box__description {
+  margin-bottom: 5px;
+}
+
+/*
+ * MEDIA QUERIES
+ */
+@media (max-width: 767px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 576px) {
+  .info-box-section--first .info-box-item {
+    border-top: 1px solid #D4D4D4;
+  }
+}
+
+@media (min-width: 768px) {
+  .header {
+    padding: 35px 40px;
+  }
+  .content {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  .section-description-box {
+    width: 50%;
+  }
+}

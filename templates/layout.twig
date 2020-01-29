@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="stylesheet" href="/open-banking-demo/css/bootstrap.css">
+  <link rel="stylesheet" href="/open-banking-demo/css/monokai-sublime.css">
+  <link rel="stylesheet" href="/open-banking-demo/css/app.css">
+</head>
+<body>
+  {% include 'components/header.twig' %}
+
+  {% block body %}{% endblock %}
+
+  <script src="/open-banking-demo/js/jquery.js"></script>
+  <script src="/open-banking-demo/js/bootstrap.js"></script>
+
+  {% block javasripts %}{% endblock %}
+</body>
+</html>
