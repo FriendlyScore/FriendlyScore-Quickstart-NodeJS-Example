@@ -1,8 +1,12 @@
-<header class="header container-fluid">
+<header class="header container-fluid d-flex justify-content-between">
   <div class="header-logo d-flex align-items-center">
     <div class="header-logo__img d-flex">
       <img src="/open-banking-demo/img/logo.svg" alt="logo">
     </div>
-    <span class="header-logo__for-developers">For developers</span>
+    <span class="header-logo__for-developers d-none d-sm-block">For developers</span>
   </div>
+  <ul class="navbar-nav navbar-nav--top-right align-items-center">
+    <li class="nav-item nav-item--login"><a class="nav-link d-inline-flex" href="https://friendlyscore.com/login"><span class="nav-link__icon mr-2 d-flex align-items-center justify-content-center">{% include 'components/svg/user.svg.twig' with {color: "#2b2b2b"} %}</span> Login</a></li>
+    <li class="nav-item nav-item--btn"><a class="btn btn-outline-purple d-inline-flex" href="https://friendlyscore.com/getting-started">Get Started <span class="btn__icon ml-3 d-flex align-items-center justify-content-center">{% include 'components/svg/caret-right.svg.twig' with {color: "#7038a7"} %}</span></a></li>
+  </ul>
 </header>

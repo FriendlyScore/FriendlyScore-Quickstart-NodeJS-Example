@@ -49,6 +49,40 @@ h2, h3, h4, h5, h6 {
   background-color: #7A2EAD;
 }
 
+.btn-outline-purple {
+  color: #7038a7;
+  border-color: #7038a7;
+  padding: 10px 25px;
+  font-weight: 700;
+}
+.btn-outline-purple .stroke {
+  transition: stroke .15s ease-in-out;
+}
+.btn-outline-purple:hover {
+  color: #fff;
+  background-color: #7038a7;
+  border-color: #7038a7;
+}
+.btn-outline-purple:hover .stroke {
+  stroke: #fff;
+}
+.nav-link {
+  color: #2b2b2b;
+  font-weight: 600;
+}
+.nav-link:hover {
+  color: #7038a7;
+}
+.nav-item--login .nav-link {
+
+}
+.nav-link .stroke {
+  transition: stroke .15s ease-in-out;
+}
+.nav-link:hover .stroke {
+  stroke: #7038a7;
+}
+
 /*
  * BOOTSTRAP
  * NAV-TABS
@@ -262,6 +296,14 @@ h2, h3, h4, h5, h6 {
 }
 
 @media (min-width: 576px) {
+  .navbar-nav--top-right {
+    flex-direction: row;
+  }
+
+  .navbar-nav--top-right .nav-item--login {
+    margin: 0 15px;
+  }
+
   .info-box-section--first .info-box-item {
     border-top: 1px solid #D4D4D4;
   }
