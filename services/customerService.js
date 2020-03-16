@@ -13,9 +13,15 @@ const { baseUrl, userReference, defaultHeaders } = require('../config');
  */
 async function getCustomers(accessToken) {
   try {
+    let url = `${baseUrl}/public/v1/customers`;
+
+    if (userReference) {
+      url = `${url}?by-user-reference=${userReference}`;
+    }
+
     const config = {
       "method": "GET",
-      "url": `${baseUrl}/public/v1/customers`,
+      "url": url,
       "qs": {
           "by-user-reference": userReference
       },
